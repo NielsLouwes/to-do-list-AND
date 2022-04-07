@@ -16,11 +16,19 @@ const ToDoList = styled.div`
   margin-top: 15px;
 `;
 
+const Button = styled.button`
+  height: 3vh;
+  width: 2vw;
+  margin-left: 5px;
+  margin-top: 5px;
+`;
+
 export default function App() {
   return (
     <Styled className="App">
       <h1>TODO LIST APP</h1>
-      <InputElement></InputElement>
+      <InputElement />
+      <Button type="submit"></Button>
       <ToDoList></ToDoList>
     </Styled>
   );
