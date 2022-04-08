@@ -17,21 +17,12 @@ const ToDoList = styled.div`
   margin-top: 15px;
 `;
 
-const Button = styled.button`
-  height: 3vh;
-  width: 2vw;
-  margin-left: 5px;
-  margin-top: 5px;
-`;
+const toDoData = ["Wash car", "Clean Room"];
+//need a way to push more into the array -- .push
 
-const InputContainer = styled.div``;
-
-const toDoData = [{ id: 1, value: "wash car" }];
-
-// function addToDo(name) {
-//   const newToDo = { id: "todo" + nanoid(), name: name };
-//   setTasks([...tasks, newTask]);
-// }
+const myFunction = (event) => {
+  setToDos(event.target.value);
+};
 
 export default function App() {
   const [todos, setToDos] = useState(toDoData);
@@ -39,10 +30,10 @@ export default function App() {
   return (
     <Styled className="App">
       <h1>TODO LIST APP</h1>
-      <InputElement></InputElement>
+      <InputElement type="text" onkeydown={myFunction}></InputElement>
       <ToDoList>
         {todos.map((todo) => (
-          <p key={todo.id}> {todo.value} </p>
+          <p key={todo}> {todo} </p>
         ))}
       </ToDoList>
     </Styled>
