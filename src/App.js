@@ -17,23 +17,44 @@ const ToDoList = styled.div`
   margin-top: 15px;
 `;
 
-const toDoData = ["Wash car", "Clean Room"];
-//need a way to push more into the array -- .push
+const ListItemContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
 
-const myFunction = (event) => {
-  setToDos(event.target.value);
-};
+  button {
+    height: 4vh;
+    width: 4vw;
+    margin-top: 10px;
+  }
+`;
+
+const toDoData = ["Wash Car", "Clean Room"];
+//need a way to push more into the array -- .push
 
 export default function App() {
   const [todos, setToDos] = useState(toDoData);
 
+  const addToDo = (event) => {
+    if (event.key === "Enter") {
+      const newToDos = [...todos, event.target.value];
+      setToDos(newToDos);
+    }
+  };
+
+  console.log(...todos);
+
   return (
     <Styled className="App">
       <h1>TODO LIST APP</h1>
-      <InputElement type="text" onkeydown={myFunction}></InputElement>
+      <InputElement type="text" onKeyDown={addToDo}></InputElement>
       <ToDoList>
         {todos.map((todo) => (
-          <p key={todo}> {todo} </p>
+          <>
+            <ListItemContainer>
+              <p key={todo}> {todo} </p>
+              <button>X</button>
+            </ListItemContainer>
+          </>
         ))}
       </ToDoList>
     </Styled>
