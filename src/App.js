@@ -29,7 +29,7 @@ export default function App() {
       <h1>TODO LIST APP</h1>
       <InputElement />
       <Button type="submit"></Button>
-      <ToDoList></ToDoList>
+      <ToDoList> Does this work?</ToDoList>
     </Styled>
   );
 }
