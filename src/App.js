@@ -1,5 +1,6 @@
 import "./styles.css";
 import styled from "styled-components";
+import { useState } from "react";
 
 const Styled = styled.div``;
 
@@ -23,13 +24,25 @@ const Button = styled.button`
   margin-top: 5px;
 `;
 
+const toDoData = [{ id: 1, value: "wash car" }];
+
+// function addTask(name) {
+//   const newTask = { id: "todo" + nanoid(), name: name, completed: false };
+//   setTasks([...tasks, newTask]);
+// }
+
 export default function App() {
+  const [todos, setToDos] = useState(toDoData);
+
   return (
     <Styled className="App">
       <h1>TODO LIST APP</h1>
-      <InputElement />
-      <Button type="submit"></Button>
-      <ToDoList> Does this work?</ToDoList>
+      <InputElement></InputElement>
+      <ToDoList>
+        {todos.map((todo) => (
+          <p> {todo.value} </p>
+        ))}
+      </ToDoList>
     </Styled>
   );
 }
