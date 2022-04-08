@@ -24,10 +24,12 @@ const Button = styled.button`
   margin-top: 5px;
 `;
 
+const InputContainer = styled.div``;
+
 const toDoData = [{ id: 1, value: "wash car" }];
 
-// function addTask(name) {
-//   const newTask = { id: "todo" + nanoid(), name: name, completed: false };
+// function addToDo(name) {
+//   const newToDo = { id: "todo" + nanoid(), name: name };
 //   setTasks([...tasks, newTask]);
 // }
 
@@ -40,7 +42,7 @@ export default function App() {
       <InputElement></InputElement>
       <ToDoList>
         {todos.map((todo) => (
-          <p> {todo.value} </p>
+          <p key={todo.id}> {todo.value} </p>
         ))}
       </ToDoList>
     </Styled>
