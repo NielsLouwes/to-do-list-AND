@@ -28,12 +28,12 @@ const ListItemContainer = styled.div`
   }
 `;
 
-const toDoData = ["Wash Car", "Clean Room"];
-//need a way to push more into the array -- .push
+const toDoData = ["Write", "Clean Room"];
 
 export default function App() {
   const [todos, setToDos] = useState(toDoData);
 
+  // add new to do
   const addToDo = (event) => {
     if (event.key === "Enter") {
       const newToDos = [...todos, event.target.value];
@@ -41,17 +41,40 @@ export default function App() {
     }
   };
 
-  console.log(...todos);
+  // remove to do
+  const handleDeleteClick = (name) => {
+    const removeItem = todos.filter((todo) => {
+      return todo !== name;
+    });
+    setToDos(removeItem);
+  };
+
+  // function handleDeleteClick(id) {
+  //   // here we are filtering - the idea is remove an item from the todo array on a button click
+  //   const removeItem = todos.filter((todo) => {
+  //     // return the rest of the todos that don't match the item we are deleting
+  //     return todo.id !== id;
+  //   });
+  //   // removeItem returns a new array - so now we are setting the todos to the new array
+  //   setTodos(removeItem);
+  // }
 
   return (
     <Styled className="App">
       <h1>TODO LIST APP</h1>
-      <InputElement type="text" onKeyDown={addToDo}></InputElement>
+      <InputElement
+        placeholder="Type here..."
+        type="text"
+        onKeyDown={addToDo}
+      ></InputElement>
       <ToDoList>
         {todos.map((todo) => (
           <>
             <ListItemContainer>
-              <p key={todo}> {todo} </p>
+              <p onClick={handleDeleteClick} key={todo}>
+                {" "}
+                {todo}{" "}
+              </p>
               <button>X</button>
             </ListItemContainer>
           </>
