@@ -30,7 +30,7 @@ const ListItemContainer = styled.div`
 `;
 
 const toDoData = ["Write", "Clean Room"];
-const removedItems = [];
+const removedItems = ["Code"];
 
 export default function App() {
   const [todos, setToDos] = useState(toDoData);
@@ -73,7 +73,7 @@ export default function App() {
           </>
         ))}
       </ToDoList>
-      <Archive />
+      <Archive removedItem={removedItem} />
     </Styled>
   );
 }
