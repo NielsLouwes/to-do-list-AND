@@ -52,7 +52,11 @@ export default function App() {
   const addToDo = (event) => {
     if (event.key === "Enter") {
       const newToDos = [...todos, event.target.value];
-      setToDos(newToDos);
+      let itemExists = todos.indexOf(event.target.value) > 1;
+      if (!itemExists) {
+        setToDos(newToDos);
+      }
+      return;
     }
   };
 
