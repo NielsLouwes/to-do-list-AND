@@ -8,10 +8,14 @@ const InputElement = styled.input`
   height: 2vh;
 `;
 
+const Form = styled.form``;
+
 export default InputElement = () => {
   return (
     <Styled>
-      <InputElement type="text"></InputElement>
+      <Form>
+        <InputElement type="text"></InputElement>
+      </Form>
     </Styled>
   );
 };

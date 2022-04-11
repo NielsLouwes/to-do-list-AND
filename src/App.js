@@ -34,6 +34,7 @@ const removedItems = [];
 
 export default function App() {
   const [todos, setToDos] = useState(toDoData);
+  const [todo, setToDo] = useState("");
   const [removedItem, setRemovedItem] = useState(removedItems);
 
   // add new to do
@@ -47,6 +48,9 @@ export default function App() {
   // remove to do
   const handleDeleteClick = (name) => {
     const removeItem = todos.filter((todo) => {
+      if (todo === name) {
+        removedItems.push(todo);
+      }
       return todo !== name;
     });
     setToDos(removeItem);
@@ -64,7 +68,7 @@ export default function App() {
                 {" "}
                 {todo}{" "}
               </p>
-              <button>X</button>
+              <button>x</button>
             </ListItemContainer>
           </>
         ))}
