@@ -1,6 +1,6 @@
 import "./styles.css";
 import styled from "styled-components";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 const Styled = styled.div``;
 
@@ -52,11 +52,7 @@ export default function App() {
   return (
     <Styled className="App">
       <h1>TODO LIST APP</h1>
-      <InputElement
-        placeholder="Type here..."
-        type="text"
-        onKeyDown={addToDo}
-      ></InputElement>
+      <InputElement placeholder="Type here..." onKeyDown={addToDo} />
       <ToDoList>
         {todos.map((todo) => (
           <>
