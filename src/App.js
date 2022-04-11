@@ -1,6 +1,7 @@
 import "./styles.css";
 import styled from "styled-components";
 import { useState } from "react";
+import Archive from "./Archive";
 
 const Styled = styled.div``;
 
@@ -29,9 +30,11 @@ const ListItemContainer = styled.div`
 `;
 
 const toDoData = ["Write", "Clean Room"];
+const removedItems = [];
 
 export default function App() {
   const [todos, setToDos] = useState(toDoData);
+  const [removedItem, setRemovedItem] = useState(removedItems);
 
   // add new to do
   const addToDo = (event) => {
@@ -66,6 +69,7 @@ export default function App() {
           </>
         ))}
       </ToDoList>
+      <Archive />
     </Styled>
   );
 }
