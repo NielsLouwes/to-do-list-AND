@@ -2,6 +2,8 @@ import "./styles.css";
 import styled from "styled-components";
 import { useState } from "react";
 import Archive from "./Archive";
+import { Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 const Styled = styled.div``;
 
@@ -68,6 +70,11 @@ export default function App() {
   return (
     <Styled className="App">
       <h1>TODO LIST APP</h1>
+      {/* <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="expenses" element={<Expenses />} />
+        <Route path="invoices" element={<Invoices />} />
+      </Routes> */}
       <InputElement placeholder="Type here..." onKeyDown={addToDo} />
       <ToDoList>
         {todos.map((todo) => (
@@ -83,7 +90,7 @@ export default function App() {
         ))}
         <Completed>Completed Items </Completed>
       </ToDoList>
-      <Archive removedItem={removedItem} />
+      <Link to="/archive">Archive</Link> <Archive removedItem={removedItem} />
     </Styled>
   );
 }
