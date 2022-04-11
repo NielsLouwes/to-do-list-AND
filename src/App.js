@@ -8,6 +8,7 @@ const Styled = styled.div``;
 const InputElement = styled.input`
   width: 50%;
   height: 2vh;
+  position: relative;
 `;
 
 const ToDoList = styled.div`
@@ -27,6 +28,14 @@ const ListItemContainer = styled.div`
     width: 4vw;
     margin-top: 10px;
   }
+`;
+
+const Completed = styled.p`
+  color: lightgray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 5px;
 `;
 
 const toDoData = ["Write", "Clean Room"];
@@ -72,6 +81,7 @@ export default function App() {
             </ListItemContainer>
           </>
         ))}
+        <Completed>Completed Items </Completed>
       </ToDoList>
       <Archive removedItem={removedItem} />
     </Styled>
