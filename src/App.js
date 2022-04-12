@@ -4,6 +4,7 @@ import { useState } from "react";
 import Archive from "./Archive";
 import { Link } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
+import Header from "./Header";
 
 const Styled = styled.div``;
 
@@ -71,9 +72,17 @@ export default function App() {
     setToDos(removeItem);
   };
 
+  //removing
+  //splice the index of the array
+  //grab the value of what we clicked on, finds its index with indexOf and splice it
+  //   const index = array.indexOf(5);
+  // if (index > -1) {
+  //   array.splice(index, 1); // 2nd parameter means remove one item only
+  // }
+
   return (
     <Styled className="App">
-      <h1>TODO LIST APP</h1>
+      <Header />
       {/* <Routes>
         <Route path="/" element={<App />} />
         <Route path="expenses" element={<Expenses />} />
