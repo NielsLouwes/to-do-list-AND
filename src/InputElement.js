@@ -10,11 +10,16 @@ const InputElement = styled.input`
 
 const Form = styled.form``;
 
-export default InputElement = () => {
+export default InputElement = ({ setInputText }) => {
+  const inputTextHandler = (event) => {
+    console.log(event.target.value);
+    setInputText(event.target.value);
+  };
+
   return (
     <Styled>
       <Form>
-        <InputElement type="text"></InputElement>
+        <InputElement onChange={inputTextHandler} type="text"></InputElement>
       </Form>
     </Styled>
   );
