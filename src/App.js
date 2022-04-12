@@ -25,14 +25,14 @@ export default function App() {
     <div className="App">
       <header>
         <h1>To Do List </h1>
-        <Form
-          setTodos={setTodos}
-          setInputText={setInputText}
-          todos={todos}
-          inputText={inputText}
-        />
-        <TodoList todos={todos} />
       </header>
+      <Form
+        setTodos={setTodos}
+        setInputText={setInputText}
+        todos={todos}
+        inputText={inputText}
+      />
+      <TodoList todos={todos} />
     </div>
   );
 }
