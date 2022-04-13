@@ -1,4 +1,5 @@
 import React from "react";
+import Todo from "./Todo";
 
 const TodoList = ({ todos }) => {
   return (
@@ -6,7 +7,7 @@ const TodoList = ({ todos }) => {
       <div className="todo-container">
         <ul className="todo-list">
           {todos.map((todo) => (
-            <li> {todo.text} </li>
+            <Todo todos={todos} />
           ))}
         </ul>
       </div>
