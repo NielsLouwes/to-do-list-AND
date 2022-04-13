@@ -7,20 +7,6 @@ export default function App() {
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
 
-  //creating an object when creating new todo
-  // const addNewToDo = (event) => {
-  //   event.preventDefault();
-  //   updateTodos((prevTodos) => [
-  //     ...prevTodos,
-  //     {
-  //       id: Date.now(),
-  //       text: newTodo,
-  //       completed: false
-  //     }
-  //   ]);
-  //   updateNewTodo("");
-  // };
-
   return (
     <div className="App">
       <header>
