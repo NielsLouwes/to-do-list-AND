@@ -6,6 +6,8 @@ import "./styles.css";
 export default function App() {
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
+  const [status, setStatus] = useState("all");
+  const [filteredTodos, setFilterTodos] = useState([]);
 
   return (
     <div className="App">
@@ -17,6 +19,7 @@ export default function App() {
         setInputText={setInputText}
         todos={todos}
         inputText={inputText}
+        setStatus={setStatus}
       />
       <TodoList setTodos={setTodos} todos={todos} />
     </div>
