@@ -7,14 +7,16 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
 
   const submitTodoHandler = (e) => {
     e.preventDefault();
-    setTodos([
-      ...todos,
-      {
-        id: Date.now(),
-        text: inputText,
-        completed: false
-      }
-    ]);
+    if (inputText.length > 2) {
+      setTodos([
+        ...todos,
+        {
+          id: Date.now(),
+          text: inputText,
+          completed: false
+        }
+      ]);
+    }
     setInputText("");
   };
 
